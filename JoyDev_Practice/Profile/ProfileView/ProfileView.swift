@@ -10,7 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).foregroundColor(Color.active)
-        Text("erm").foregroundColor(Color.red)
+        Text("Hello, World!").foregroundColor(Color.plain)
+        Text("Hello, World!").foregroundColor(Color.background)
     }
 }
 

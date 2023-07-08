@@ -34,8 +34,8 @@ final class NavigationTabBar: UITabBarController {
     
     func setupVCs(){
         viewControllers = [
-            createNavController(for: ViewController(), title: "Carusel", image: UIImage(systemName: "house")!),
-            createNavController(for: UIHostingController(rootView: ProfileView()), title: "Profile", image: UIImage(systemName: "person")!)
+            createNavController(for: ViewController(), title: NavBarString.carousel, image: UIImage(systemName: Images.carousel)!),
+            createNavController(for: UIHostingController(rootView: ProfileView()), title: NavBarString.profile, image: UIImage(systemName: Images.profile)!)
         ]
     }
     
