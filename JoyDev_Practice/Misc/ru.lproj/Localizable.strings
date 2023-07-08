@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  JoyDev_Practice
+
+  Created by  ProveY0urW0rth on 08.07.2023.
+  
+*/
+//MARK: - Tab Bar
+"TabBar.Carousel" = "Карусель";
+"TabBar.Profile" = "Профиль";
