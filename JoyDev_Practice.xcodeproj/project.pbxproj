@@ -10,6 +10,12 @@
 		8AF090812A55757F0024CB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF090802A55757F0024CB75 /* AppDelegate.swift */; };
 		8AF090852A55757F0024CB75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF090842A55757F0024CB75 /* ViewController.swift */; };
 		8AF0908A2A5575830024CB75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF090892A5575830024CB75 /* Assets.xcassets */; };
+		CE1BA3412A59997B00E19605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1BA3402A59997B00E19605 /* LaunchScreen.storyboard */; };
+		CE1BA34D2A599B0300E19605 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BA3442A599B0300E19605 /* ProfileView.swift */; };
+		CE1BA34F2A599B0300E19605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BA3482A599B0300E19605 /* Colors.swift */; };
+		CE1BA3502A599B0300E19605 /* NavigationTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BA34A2A599B0300E19605 /* NavigationTabBar.swift */; };
+		CE1BA3512A599B0300E19605 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BA34C2A599B0300E19605 /* ProfileModel.swift */; };
+		CE1BA3562A599E7800E19605 /* ProfileButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BA3552A599E7800E19605 /* ProfileButtonStyle.swift */; };
 		CEB993FB2A55789D00E502F9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CEB993FA2A55789D00E502F9 /* Moya */; };
 		CEB993FE2A5578D200E502F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB993FD2A5578D200E502F9 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -20,6 +26,12 @@
 		8AF090842A55757F0024CB75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8AF090892A5575830024CB75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF0908E2A5575830024CB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1BA3402A59997B00E19605 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE1BA3442A599B0300E19605 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CE1BA3482A599B0300E19605 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CE1BA34A2A599B0300E19605 /* NavigationTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTabBar.swift; sourceTree = "<group>"; };
+		CE1BA34C2A599B0300E19605 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		CE1BA3552A599E7800E19605 /* ProfileButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +66,90 @@
 		8AF0907F2A55757F0024CB75 /* JoyDev_Practice */ = {
 			isa = PBXGroup;
 			children = (
+				CE1BA3522A599DCC00E19605 /* Carousel */,
+				CE1BA3452A599B0300E19605 /* Helpers */,
+				CE1BA34B2A599B0300E19605 /* Models */,
+				CE1BA3492A599B0300E19605 /* Navigation */,
+				CE1BA3422A599B0300E19605 /* Profile */,
+				CE1BA3402A59997B00E19605 /* LaunchScreen.storyboard */,
 				8AF090802A55757F0024CB75 /* AppDelegate.swift */,
 				8AF090842A55757F0024CB75 /* ViewController.swift */,
 				8AF090892A5575830024CB75 /* Assets.xcassets */,
 				8AF0908E2A5575830024CB75 /* Info.plist */,
 			);
 			path = JoyDev_Practice;
+			sourceTree = "<group>";
+		};
+		CE1BA3422A599B0300E19605 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA3432A599B0300E19605 /* ProfileView */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE1BA3432A599B0300E19605 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA3442A599B0300E19605 /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		CE1BA3452A599B0300E19605 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA3462A599B0300E19605 /* Styles */,
+				CE1BA3482A599B0300E19605 /* Colors.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE1BA3462A599B0300E19605 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA3552A599E7800E19605 /* ProfileButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		CE1BA3492A599B0300E19605 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA34A2A599B0300E19605 /* NavigationTabBar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CE1BA34B2A599B0300E19605 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA34C2A599B0300E19605 /* ProfileModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE1BA3522A599DCC00E19605 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				CE1BA3542A599DF900E19605 /* CarouselViewModel */,
+				CE1BA3532A599DEC00E19605 /* CarouselViewController */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		CE1BA3532A599DEC00E19605 /* CarouselViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CarouselViewController;
+			sourceTree = "<group>";
+		};
+		CE1BA3542A599DF900E19605 /* CarouselViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CarouselViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF0908A2A5575830024CB75 /* Assets.xcassets in Resources */,
+				CE1BA3412A59997B00E19605 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +231,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF090852A55757F0024CB75 /* ViewController.swift in Sources */,
+				CE1BA3512A599B0300E19605 /* ProfileModel.swift in Sources */,
+				CE1BA3502A599B0300E19605 /* NavigationTabBar.swift in Sources */,
+				CE1BA3562A599E7800E19605 /* ProfileButtonStyle.swift in Sources */,
+				CE1BA34F2A599B0300E19605 /* Colors.swift in Sources */,
+				CE1BA34D2A599B0300E19605 /* ProfileView.swift in Sources */,
 				8AF090812A55757F0024CB75 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +369,6 @@
 				INFOPLIST_FILE = JoyDev_Practice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -302,7 +397,6 @@
 				INFOPLIST_FILE = JoyDev_Practice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
