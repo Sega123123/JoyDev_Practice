@@ -13,9 +13,11 @@ struct ProfileEditButton: ButtonStyle{
         configuration.label
             .padding(.horizontal,12)
             .padding(.vertical,7)
-            .scaledToFill()
-            .font(.title2)
+            //.scaledToFit()
+            .font(.title3)
+            .lineLimit(nil)
             .multilineTextAlignment(.center)
+            .frame(maxWidth: 170)
             .background(Color.active)
             .foregroundColor(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 7.5))

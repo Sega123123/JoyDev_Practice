@@ -8,27 +8,38 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var imageUrl = Images.profileTest
-    @State private var name = "Bugaenko Daniil"
-    @State private var username = "@ProveY0urW0rth"
-    @State private var bio = "Created this page. Doing code for living. Perspective IOS developer who wants to create his own big Action-RPG game"
-    @State private var joinDate = "November 2017"
-    @State private var following = 121
-    @State private var followers = 21230
+    init() {
+        let jsonData = DataLoader.shared.jsonGet()
+        imageUrl = jsonData.imageUrl
+        name = jsonData.name
+        username = jsonData.username
+        bio = jsonData.bio
+        joinDate = jsonData.joinDate
+        following = jsonData.following
+        followers = jsonData.followers
+    }
+    
+    @State private var imageUrl:String
+    @State private var name:String
+    @State private var username:String
+    @State private var bio:String
+    @State private var joinDate:String
+    @State private var following:Int
+    @State private var followers:Int
     
     var body: some View {
         ZStack{
             VStack(alignment: .leading,spacing: 10){
-                HStack(alignment: .bottom,spacing: 120){
+                HStack(alignment: .bottom,spacing: 50){
                     Image(imageUrl).profileImage()
                     Button{
-                        print("tapped edit button")
+                        print("Changed to edit mode")
                     }label: {
                         Text("\(ProfileStrings.editProfile)")
                     }.buttonStyle(.editButton)
                 }
                 Text(name).boldLabelStyle
-                Text(username)
+                Text("@"+username)
                     .multilineTextAlignment(.leading)
                 Text(bio).bio
                 Text("\(ProfileStrings.joined) \(joinDate)")

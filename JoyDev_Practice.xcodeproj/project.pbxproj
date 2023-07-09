@@ -22,6 +22,8 @@
 		CE1BA3622A59A0F300E19605 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE1BA3642A59A0F300E19605 /* Localizable.strings */; };
 		CE8F07672A5AC954001072B5 /* ProfilePictureStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F07662A5AC954001072B5 /* ProfilePictureStyle.swift */; };
 		CE8F07692A5ACF22001072B5 /* ProfileLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F07682A5ACF22001072B5 /* ProfileLabelStyles.swift */; };
+		CE8F07722A5B150B001072B5 /* profileData.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8F07712A5B150B001072B5 /* profileData.json */; };
+		CE8F07742A5B1911001072B5 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F07732A5B1911001072B5 /* DataLoader.swift */; };
 		CEB993FB2A55789D00E502F9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CEB993FA2A55789D00E502F9 /* Moya */; };
 		CEB993FE2A5578D200E502F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB993FD2A5578D200E502F9 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,8 @@
 		CE1BA3652A59A0F700E19605 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE8F07662A5AC954001072B5 /* ProfilePictureStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureStyle.swift; sourceTree = "<group>"; };
 		CE8F07682A5ACF22001072B5 /* ProfileLabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabelStyles.swift; sourceTree = "<group>"; };
+		CE8F07712A5B150B001072B5 /* profileData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profileData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		CE8F07732A5B1911001072B5 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			children = (
 				CE1BA3462A599B0300E19605 /* Styles */,
 				CE1BA3482A599B0300E19605 /* Colors.swift */,
+				CE8F07732A5B1911001072B5 /* DataLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				CE1BA35B2A599FF200E19605 /* Enums.swift */,
 				CE1BA3642A59A0F300E19605 /* Localizable.strings */,
+				CE8F07712A5B150B001072B5 /* profileData.json */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8F07722A5B150B001072B5 /* profileData.json in Resources */,
 				8AF0908A2A5575830024CB75 /* Assets.xcassets in Resources */,
 				CE1BA3622A59A0F300E19605 /* Localizable.strings in Resources */,
 				CE1BA3412A59997B00E19605 /* LaunchScreen.storyboard in Resources */,
@@ -276,6 +283,7 @@
 				CE1BA3562A599E7800E19605 /* ProfileButtonStyle.swift in Sources */,
 				CE1BA34F2A599B0300E19605 /* Colors.swift in Sources */,
 				CE1BA3582A599F0F00E19605 /* CarouselViewModel.swift in Sources */,
+				CE8F07742A5B1911001072B5 /* DataLoader.swift in Sources */,
 				CE1BA34D2A599B0300E19605 /* ProfileView.swift in Sources */,
 				CE1BA35A2A599F1600E19605 /* CarouselViewController.swift in Sources */,
 				8AF090812A55757F0024CB75 /* AppDelegate.swift in Sources */,

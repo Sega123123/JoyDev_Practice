@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct Profile:Codable{
+    var name: String
+    var username: String
+    var bio:String
+    var joinDate:String
+    var following:Int
+    var followers:Int
+    var imageUrl: String
+}
+

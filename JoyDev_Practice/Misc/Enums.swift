@@ -21,6 +21,5 @@ enum NavBarString{
 
 enum Images{
     static let carousel = "house",
-               profile = "person",
-               profileTest = "ProfilePicture"
+               profile = "person"
 }
