@@ -8,3 +8,11 @@
 //MARK: - Tab Bar
 "TabBar.Carousel" = "Carousel";
 "TabBar.Profile" = "Profile";
+//MARK: - Profile
+"Profile.EditButton" = "Edit Profile";
+"Profile.Following" = "Following";
+"Profile.Followers" = "Followers";
+"Profile.Joined" = "Joined";
+
+
+

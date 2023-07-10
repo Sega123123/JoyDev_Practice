@@ -8,10 +8,50 @@
 import SwiftUI
 
 struct ProfileView: View {
+    init() {
+        let jsonData = DataLoader.shared.jsonGet()
+        imageUrl = jsonData.imageUrl
+        name = jsonData.name
+        username = jsonData.username
+        bio = jsonData.bio
+        joinDate = jsonData.joinDate
+        following = jsonData.following
+        followers = jsonData.followers
+    }
+    
+    @State private var imageUrl:String
+    @State private var name:String
+    @State private var username:String
+    @State private var bio:String
+    @State private var joinDate:String
+    @State private var following:Int
+    @State private var followers:Int
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).foregroundColor(Color.active)
-        Text("Hello, World!").foregroundColor(Color.plain)
-        Text("Hello, World!").foregroundColor(Color.background)
+        ZStack{
+            VStack(alignment: .leading,spacing: 10){
+                HStack(alignment: .bottom,spacing: 50){
+                    Image(imageUrl).profileImage()
+                    Button{
+                        print("Changed to edit mode")
+                    }label: {
+                        Text("\(ProfileStrings.editProfile)")
+                    }.buttonStyle(.editButton)
+                }
+                Text(name).boldLabelStyle
+                Text("@"+username)
+                    .multilineTextAlignment(.leading)
+                Text(bio).bio
+                Text("\(ProfileStrings.joined) \(joinDate)")
+                    .multilineTextAlignment(.leading)
+                
+                HStack{
+                    Text("\(ProfileStrings.following): **\(following)**")
+                    Text("\(ProfileStrings.followers): **\(followers)**")
+                }
+            }
+            .padding(.leading, 10.0)
+        }.frame(maxWidth: .greatestFiniteMagnitude, maxHeight: .greatestFiniteMagnitude, alignment: .top)
     }
 }
 
