@@ -12,6 +12,7 @@ import SwiftUI
      
      @Binding var editMode: Bool
      @Binding var imageUrl: String
+     @State private var showingAlert = false
      
      var body: some View {
          VStack{
@@ -21,14 +22,17 @@ import SwiftUI
                      Spacer()
                      HStack(spacing: 5){
                          Button{
-                             print("Tapped share button")
+                             showingAlert = !showingAlert
                          }label: {
                              Image(systemName: Images.share)
                          }.buttonStyle(.subButton)
+                             .alert(isPresented: $showingAlert){
+                                 Alert(title: Text("Share link"),message: Text("share"),dismissButton: .default(Text("OK")))
+                             }
                          Button{
                              editMode = !editMode
                          }label: {
-                             Text("\(!editMode ? ProfileStrings.editProfile : ProfileStrings.saveProfile)")
+                             Text("\(!editMode ? ProfileStrings.editProfile : ProfileStrings.saveProfile)").animation(.interpolatingSpring(stiffness: 170, damping: 15),value: editMode)
                          }.buttonStyle(.mainButton)
                          Spacer().frame(width: UIScreen.main.bounds.width*0.01)
                      }
