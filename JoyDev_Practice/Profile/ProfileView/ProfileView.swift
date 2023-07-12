@@ -26,25 +26,19 @@ struct ProfileView: View {
     @State private var joinDate:String
     @State private var following:Int
     @State private var followers:Int
+    @State private var editMode: Bool = false
     
     var body: some View {
         ZStack{
             VStack(alignment: .leading,spacing: 10){
-                HStack(alignment: .bottom,spacing: 50){
-                    Image(imageUrl).profileImage()
-                    Button{
-                        print("Changed to edit mode")
-                    }label: {
-                        Text("\(ProfileStrings.editProfile)")
-                    }.buttonStyle(.editButton)
-                }
-                Text(name).boldLabelStyle
+                ProfileHeader(editMode: $editMode, imageUrl: $imageUrl)
+                FieldWithEditor(mode: $editMode, text: $name, type: .name)
                 Text("@"+username)
                     .multilineTextAlignment(.leading)
-                Text(bio).bio
+                FieldWithEditor(mode: $editMode, text: $bio, type: .bio)
+                
                 Text("\(ProfileStrings.joined) \(joinDate)")
                     .multilineTextAlignment(.leading)
-                
                 HStack{
                     Text("\(ProfileStrings.following): **\(following)**")
                     Text("\(ProfileStrings.followers): **\(followers)**")

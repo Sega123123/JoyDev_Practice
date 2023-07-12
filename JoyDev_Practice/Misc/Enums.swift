@@ -9,6 +9,7 @@ import Foundation
 
 enum ProfileStrings{
     static let editProfile = NSLocalizedString("Profile.EditButton", comment: "label for edit profile button"),
+               saveProfile = NSLocalizedString("Profile.SaveButton", comment: "label for save profile button"),
                following = NSLocalizedString("Profile.Following", comment: "label for user profile following count"),
                followers = NSLocalizedString("Profile.Followers", comment: "label for user profile followers count"),
                joined = NSLocalizedString("Profile.Joined", comment: "label fot user profile joined date")
@@ -21,5 +22,11 @@ enum NavBarString{
 
 enum Images{
     static let carousel = "house",
-               profile = "person"
+               profile = "person",
+               share = "arrowshape.turn.up.right"
+}
+
+enum EditorFieldType{
+    case name
+    case bio
 }

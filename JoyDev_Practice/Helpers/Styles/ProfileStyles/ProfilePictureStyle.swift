@@ -12,8 +12,8 @@ extension Image{
         self
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: 125,height: 125)
+            .frame(width: UIScreen.main.bounds.width*0.3,height: UIScreen.main.bounds.width*0.3)
             .clipShape(Circle())
-            .overlay(Circle().stroke(lineWidth: 2).foregroundColor(Color.active))
+            .overlay(Circle().stroke(lineWidth: 5).foregroundColor(Color.active))
     }
 }

@@ -10,6 +10,7 @@
 "TabBar.Profile" = "Профиль";
 //MARK: - Profile
 "Profile.EditButton" = "Редактировать профиль";
+"Profile.SaveButton" = "Сохранить";
 "Profile.Following" = "Подписки";
 "Profile.Followers" = "Подписчики";
 "Profile.Joined" = "Зарегистрирован с";

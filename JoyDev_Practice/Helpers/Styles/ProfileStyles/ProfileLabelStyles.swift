@@ -16,10 +16,17 @@ extension View {
         self.foregroundColor(.black)
             .font(.system(size: 28,weight: .bold,design: .rounded))
     }
-    var bio: some View{
+    var bioLabelStyle: some View{
         self.foregroundColor(.black)
             .font(.system(size: 20,weight:.regular,design: .rounded))
             .multilineTextAlignment(.leading)
             .padding(.horizontal, 4.0)
+    }
+    var bioEditorStyle: some View{
+        self.foregroundColor(.black)
+            .font(.system(size: 20,weight: .regular,design: .rounded))
+            .multilineTextAlignment(.leading)
+            .frame(minWidth: UIScreen.main.bounds.width*0.919, maxHeight: 160)
+            .fixedSize(horizontal: true, vertical: false)
     }
 }
