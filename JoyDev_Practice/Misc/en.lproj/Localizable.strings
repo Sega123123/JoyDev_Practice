@@ -10,6 +10,7 @@
 "TabBar.Profile" = "Profile";
 //MARK: - Profile
 "Profile.EditButton" = "Edit Profile";
+"Profile.SaveButton" = "Save";
 "Profile.Following" = "Following";
 "Profile.Followers" = "Followers";
 "Profile.Joined" = "Joined";
