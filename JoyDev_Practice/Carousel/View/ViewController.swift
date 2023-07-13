@@ -10,6 +10,8 @@ class ViewController: UIViewController {
     private enum Consts{
         static let collectionViewHeightAnchorConstantMultiply = 0.5
         static let cellReuseIdentifier = "CarouselCollectionViewCell"
+        static let frameHeightMultiply = 0.7
+        static let flowLayoutItemWidth = (UIScreen.main.bounds.width - 80 - (15 / 2)) / 2
     }
     
     // MARK: - Private properties
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
             carouselCollectionView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * Consts.collectionViewHeightAnchorConstantMultiply)
         ])
         carouselCollectionView.dataSource = self
+        carouselCollectionView.delegate = self
 
         viewModel.items.bind { [weak self] _ in
             DispatchQueue.main.async {
@@ -43,8 +46,10 @@ class ViewController: UIViewController {
         fetchData() // загрузка данных
     }
     
-    func fetchData() {
-        itemProvider.request(.getItems) { (result) in
+    // MARK: - Private Methods
+    
+    private func fetchData(moreData: Bool = false) {
+        itemProvider.request(moreData ? .getMoreItems : .getItems) { (result) in
             switch result {
             case .success(let response):
                 let items = try! JSONDecoder().decode([ItemModel].self, from: response.data)
@@ -77,8 +82,24 @@ extension ViewController: UICollectionViewDataSource {
         cell.mainImageView.kf.setImage(with: URL(string: (viewModel.items.value?[indexPath.row].image)!))
         return cell
     }
-    
-    
-    
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: Consts.flowLayoutItemWidth, height: carouselCollectionView.frame.height * Consts.frameHeightMultiply)
+    }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        visibleRect.origin = carouselCollectionView.contentOffset
+        visibleRect.size = carouselCollectionView.bounds.size
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        guard let indexPath = carouselCollectionView.indexPathForItem(at: visiblePoint) else { return }
+        if (indexPath.row + 1) % 10 == 0 && viewModel.items.value?.count == (indexPath.row + 1) {
+            fetchData(moreData: true) // подгрузка остальных данных
+        }
+    }
 }
 
