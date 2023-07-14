@@ -9,39 +9,25 @@ import SwiftUI
 
 struct ProfileView: View {
     init() {
-        let jsonData = DataLoader.shared.jsonGet()
-        imageUrl = jsonData.imageUrl
-        name = jsonData.name
-        username = jsonData.username
-        bio = jsonData.bio
-        joinDate = jsonData.joinDate
-        following = jsonData.following
-        followers = jsonData.followers
+        profileData = DataLoader.shared.jsonGet()
     }
-    
-    @State private var imageUrl:String
-    @State private var name:String
-    @State private var username:String
-    @State private var bio:String
-    @State private var joinDate:String
-    @State private var following:Int
-    @State private var followers:Int
+    @State private var profileData: Profile
     @State private var editMode: Bool = false
     
     var body: some View {
         ZStack{
             VStack(alignment: .leading,spacing: 10){
-                ProfileHeader(editMode: $editMode, imageUrl: $imageUrl)
-                FieldWithEditor(mode: $editMode, text: $name, type: .name)
-                Text("@"+username)
+                ProfileHeader(editMode: $editMode, imageUrl: $profileData.imageUrl)
+                FieldWithEditor(mode: $editMode, text: $profileData.name, type: .name)
+                Text("@"+profileData.username)
                     .multilineTextAlignment(.leading)
-                FieldWithEditor(mode: $editMode, text: $bio, type: .bio)
+                FieldWithEditor(mode: $editMode, text: $profileData.bio, type: .bio)
                 
-                Text("\(ProfileStrings.joined) \(joinDate)")
+                Text("\(ProfileStrings.joined) \(profileData.joinDate)")
                     .multilineTextAlignment(.leading)
                 HStack{
-                    Text("\(ProfileStrings.following): **\(following)**")
-                    Text("\(ProfileStrings.followers): **\(followers)**")
+                    Text("\(ProfileStrings.following): **\(profileData.following)**")
+                    Text("\(ProfileStrings.followers): **\(profileData.followers)**")
                 }
             }
             .padding(.leading, 10.0)

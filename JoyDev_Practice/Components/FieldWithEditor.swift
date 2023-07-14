@@ -27,7 +27,8 @@ struct FieldWithEditor: View{
             else{
                 TextField("",text: $text).boldLabelStyle
                     .lineLimit(1)
-                    .padding(0)
+                    .padding(5)
+                    .border(Color.active,width: 4).clipShape(RoundedRectangle(cornerRadius: 7.5)).padding(5)
                     .onReceive(text.publisher.collect()) {
                         text = String($0.prefix(24))
                     }
@@ -39,6 +40,7 @@ struct FieldWithEditor: View{
             else{
                 TextEditor(text: $text)
                     .bioEditorStyle
+                    .border(Color.active,width: 4).clipShape(RoundedRectangle(cornerRadius: 7.5)).padding(5)
                     .onReceive(text.publisher.collect()) {
                         text = String($0.prefix(150))}
             }
